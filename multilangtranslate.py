@@ -12,11 +12,11 @@ def detect_language(text):
     except lang_detect_exception.LangDetectException:
         return 'unknown'
 
-# Function to translate text
+# Function to translate text to English
 def translate_text(text, translator):
     if text:
         try:
-            translated = translator.translate(text, src='auto', dest='en')
+            translated = translator.translate(text, dest='en')
             return translated.text
         except Exception as e:
             return text
